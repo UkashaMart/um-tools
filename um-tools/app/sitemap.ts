@@ -4,7 +4,7 @@ import { getAllPosts } from "@/lib/posts";
 const tools = ["word-counter","case-converter","lorem-ipsum","duplicate-remover","text-sorter","zakat-calculator","bmi-calculator","age-calculator","percentage-calculator","loan-emi","cgpa-calculator","salary-tax","password-generator","base64","json-formatter","md5-hash","url-encoder","qr-generator","color-picker","image-to-base64","aspect-ratio"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://umtools.pk";
+  const base = "https://ukashamart.com";
   const posts = getAllPosts();
   return [
     { url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
