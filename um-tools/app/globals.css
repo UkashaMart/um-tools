@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --gold: #D4A017;
+  --gold-light: #F5C842;
+  --gold-dark: #A07810;
+  --blue: #1E3A6E;
+  --dark: #0A0A14;
+  --dark2: #111827;
+  --dark3: #1a2235;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Outfit', sans-serif; background: var(--dark); color: #F0E6C8; }
+
+.gold-text {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,160,23,0.2);
+  border-radius: 10px;
+  padding: 1.1rem;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: rgba(212,160,23,0.45); }
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #111827;
+  border: none;
+  border-radius: 7px;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: opacity 0.2s;
+}
+.btn-gold:hover { opacity: 0.85; }
+
+.btn-outline {
+  background: rgba(255,255,255,0.07);
+  color: #F0E6C8;
+  border: 1px solid rgba(212,160,23,0.2);
+  border-radius: 7px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--gold); }
+
+.inp {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(212,160,23,0.2);
+  border-radius: 7px;
+  padding: 0.5rem 0.75rem;
+  color: #F0E6C8;
+  font-size: 0.85rem;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+.inp:focus { border-color: var(--gold); }
+
+.res-box {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(212,160,23,0.2);
+  border-radius: 7px;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  min-height: 48px;
+  color: #9A8F78;
+  word-break: break-all;
+  margin-top: 0.6rem;
+}
+.res-box.ok { color: #F0E6C8; border-color: rgba(212,160,23,0.4); }
+
+.stat-box {
+  background: rgba(212,160,23,0.08);
+  border: 1px solid rgba(212,160,23,0.2);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  text-align: center;
+  min-width: 80px;
+}
