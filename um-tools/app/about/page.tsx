@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Us — UM Tools",
-  description: "Free online utility tools for Pakistan.",
+  description: "Free online utility tools for World Wide.",
 };
 export default function About() {
   return (
@@ -11,7 +11,7 @@ export default function About() {
       <p style={{ fontSize:".78rem", color:"#9A8F78", marginBottom:"1.5rem" }}>Free online utility tools for everyone</p>
       <div style={{ background:"linear-gradient(135deg,#111827,#1a2235)", border:"1px solid rgba(212,160,23,0.3)", borderRadius:14, padding:"2rem", marginBottom:"1.25rem" }}>
         <div style={{ fontFamily:"Cinzel,serif", fontSize:"1.1rem", color:"#F5C842", marginBottom:".75rem" }}>Our Mission</div>
-        <p style={{ fontSize:".9rem", color:"#9A8F78", lineHeight:1.8 }}>UM Tools ka maqsad hai ke Pakistan aur poori duniya ke logon ko <strong style={{ color:"#F0E6C8" }}>free, fast aur privacy-first</strong> online tools provide kiye jayein. Koi signup nahi, koi data collection nahi.</p>
+        <p style={{ fontSize:".9rem", color:"#9A8F78", lineHeight:1.8 }}>The aim of UM Tools is to help people in Pakistan and around the world <strong style={{ color:"#F0E6C8" }}>free, fast aur privacy-first</strong> Provide online tools. No signups, no data collection.</p>
       </div>
       <div style={{ display:"flex", gap:".75rem", flexWrap:"wrap", marginBottom:"1.25rem" }}>
         {[["25+","Free Tools"],["100%","Browser Based"],["0","Data Collected"],["24/7","Available"]].map(([v,k])=>(
@@ -22,7 +22,7 @@ export default function About() {
         ))}
       </div>
       <div className="card">
-        {[["ti-bolt","Fast","Sab tools instantly kaam karte hain"],["ti-shield","Private","Koi data hamare servers par nahi jata"],["ti-coin","Free","Bilkul free — koi hidden charges nahi"],["ti-device-mobile","Mobile Friendly","Mobile aur desktop dono par kaam karta hai"]].map(([icon,title,desc])=>(
+        {[["ti-bolt","Fast","All tools work instantly"],["ti-shield","Private","No data goes to our servers"],["ti-coin","Free","Absolutely free — No hidden charges"],["ti-device-mobile","Mobile Friendly","Works on both mobile and desktop"]].map(([icon,title,desc])=>(
           <div key={title} style={{ display:"flex", gap:".75rem", alignItems:"flex-start", marginBottom:".75rem" }}>
             <i className={`ti ${icon}`} style={{ fontSize:"1.1rem", color:"#D4A017", marginTop:2 }} />
             <div>
