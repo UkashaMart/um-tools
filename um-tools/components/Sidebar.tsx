@@ -26,6 +26,9 @@ const nav = [
   { label: "Image→Base64", href: "/tools/image-to-base64", icon: "ti-photo", section: null },
   { label: "Aspect Ratio", href: "/tools/aspect-ratio", icon: "ti-aspect-ratio", section: null },
   { label: "All Posts", href: "/blog", icon: "ti-news", section: "Blog" },
+  { label: "About Us", href: "/about", icon: "ti-info-circle", section: "Info" },
+  { label: "Contact", href: "/contact", icon: "ti-mail", section: null },
+  { label: "Privacy Policy", href: "/privacy-policy", icon: "ti-shield", section: null },
 ];
 
 export default function Sidebar() {
