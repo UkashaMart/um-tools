@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog — UM Tools | Tips, Guides & More",
-  description: "Free guides on Zakat, BMI, Password Security, and more useful tools for Pakistan.",
+  description: "Free guides on Zakat, BMI, Password Security, and more useful tools for WorldWide.",
 };
 
 export default function BlogPage() {

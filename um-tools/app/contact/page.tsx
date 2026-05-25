@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <div style={{ maxWidth:620 }}>
       <h1 style={{ fontFamily:"Cinzel,serif", fontSize:"1.5rem", color:"#F5C842", marginBottom:".3rem" }}>Contact Us</h1>
-      <p style={{ fontSize:".78rem", color:"#9A8F78", marginBottom:"1.5rem" }}>Koi sawaal ya suggestion? Hum se rabta karo!</p>
+      <p style={{ fontSize:".78rem", color:"#9A8F78", marginBottom:"1.5rem" }}>Any questions or suggestions? Contact us!</p>
       {sent?(
         <div className="card" style={{ textAlign:"center", padding:"2rem" }}>
           <i className="ti ti-circle-check" style={{ fontSize:"2.5rem", color:"#22c55e", display:"block", marginBottom:".75rem" }} />
