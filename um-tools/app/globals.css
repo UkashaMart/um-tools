@@ -2,10 +2,24 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #0A0F1E; color: #F0E6C8; font-family: Outfit, sans-serif; }
+
 .gold-text { background: linear-gradient(135deg, #D4A017, #F5C842); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
 .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(212,160,23,0.25); border-radius: 12px; padding: 1.25rem; }
-.btn-gold { background: linear-gradient(135deg, #A07810, #D4A017); color: #111; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-family: Outfit, sans-serif; }
+
+.btn-gold { background: linear-gradient(135deg, #A07810, #D4A017); color: #111; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-family: Outfit, sans-serif; font-size: .85rem; padding: .5rem 1rem; display: inline-flex; align-items: center; gap: .4rem; }
 .btn-gold:hover { opacity: 0.9; }
+
+.btn-secondary { background: rgba(212,160,23,0.12); color: #F5C842; border: 1px solid rgba(212,160,23,0.35); border-radius: 8px; font-weight: 500; cursor: pointer; font-family: Outfit, sans-serif; font-size: .85rem; padding: .5rem 1rem; display: inline-flex; align-items: center; gap: .4rem; }
+.btn-secondary:hover { background: rgba(212,160,23,0.22); }
+
+.btn-active { background: linear-gradient(135deg, #A07810, #D4A017) !important; color: #111 !important; border-color: transparent !important; }
+
 .inp { width: 100%; padding: .5rem .75rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,160,23,0.3); border-radius: 8px; color: #F0E6C8; font-size: .85rem; font-family: Outfit, sans-serif; outline: none; }
 .inp:focus { border-color: #D4A017; }
+
 .stat-box { background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; padding: .75rem; text-align: center; }
+
+.tag { display: inline-flex; align-items: center; padding: .3rem .8rem; border-radius: 20px; font-size: .78rem; font-weight: 500; cursor: pointer; border: 1px solid rgba(212,160,23,0.35); background: rgba(212,160,23,0.08); color: #F5C842; font-family: Outfit, sans-serif; margin: .2rem; }
+.tag:hover { background: rgba(212,160,23,0.2); }
+.tag.active { background: linear-gradient(135deg, #A07810, #D4A017); color: #111; border-color: transparent; }
