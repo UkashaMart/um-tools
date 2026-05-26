@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+        <link rel="stylesheet" href="/_next/static/tabler-icons.min.css" />
       </head>
       <body>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-MT7QYETVNL" strategy="afterInteractive" />
