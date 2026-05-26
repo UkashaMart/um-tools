@@ -50,25 +50,7 @@ export default function ZakatClient() {
       <h1 style={{ fontFamily:"Cinzel,serif", fontSize:"1.3rem", color:"#F5C842", marginBottom:".2rem" }}>Zakat Calculator 2026</h1>
       <p style={{ fontSize:".78rem", color:"#9A8F78", marginBottom:"1rem" }}>Updated Nisab 2026 - Gold & Silver - All World Currencies</p>
 
-      <div className="card" style={{ marginBottom:"1rem" }}>
-        <div style={{ fontSize:".62rem", color:"#D4A017", letterSpacing:"2px", textTransform:"uppercase", marginBottom:".4rem" }}>Nisab 2026 Info</div>
-        <div style={{ display:"flex", gap:".6rem", flexWrap:"wrap", marginBottom:".75rem" }}>
-          <div style={{ flex:1, minWidth:200, padding:".6rem", background:"rgba(212,160,23,.06)", borderRadius:7, borderLeft:"2px solid #D4A017" }}>
-            <div style={{ fontSize:".7rem", color:"#F5C842", fontWeight:600 }}>Gold Nisab</div>
-            <div style={{ fontSize:".75rem", color:"#9A8F78", marginTop:".2rem" }}>7.5 Tolas (87.48g)</div>
-            <div style={{ fontSize:".8rem", color:"#F0E6C8", marginTop:".2rem", fontWeight:600 }}>PKR 3,583,215</div>
-          </div>
-          <div style={{ flex:1, minWidth:200, padding:".6rem", background:"rgba(212,160,23,.06)", borderRadius:7, borderLeft:"2px solid #D4A017" }}>
-            <div style={{ fontSize:".7rem", color:"#F5C842", fontWeight:600 }}>Silver Nisab</div>
-            <div style={{ fontSize:".75rem", color:"#9A8F78", marginTop:".2rem" }}>52.5 Tolas (612.36g)</div>
-            <div style={{ fontSize:".8rem", color:"#F0E6C8", marginTop:".2rem", fontWeight:600 }}>PKR 87,413</div>
-          </div>
-        </div>
-        <div style={{ fontSize:".7rem", color:"#9A8F78", padding:".4rem .6rem", background:"rgba(255,255,255,.03)", borderRadius:5 }}>
-          Gold Rate 2026: 24K per Tola = Rs. 477,762 | Silver: 52.5 Tolas approx Rs. 87,413
-        </div>
-      </div>
-
+      {/* Currency + Nisab Type - FIRST */}
       <div className="card" style={{ marginBottom:"1rem" }}>
         <div style={{ display:"flex", gap:".6rem", flexWrap:"wrap" }}>
           <div style={{ flex:1, minWidth:160 }}>
@@ -85,12 +67,29 @@ export default function ZakatClient() {
             </select>
           </div>
         </div>
-        <div style={{ marginTop:".6rem", fontSize:".72rem", color:"#9A8F78", padding:".4rem .6rem", background:"rgba(212,160,23,.06)", borderRadius:5, borderLeft:"2px solid #D4A017" }}>
-          Nisab ({selected.code}): <strong style={{ color:"#F5C842" }}>{selected.symbol} {nisab.toLocaleString()}</strong>
-          {nisabType === "silver" ? " - Silver 52.5 Tolas (612.36g)" : " - Gold 7.5 Tolas (87.48g)"}
+      </div>
+
+      {/* Nisab Info - shows SELECTED currency */}
+      <div className="card" style={{ marginBottom:"1rem" }}>
+        <div style={{ fontSize:".62rem", color:"#D4A017", letterSpacing:"2px", textTransform:"uppercase", marginBottom:".75rem" }}>Nisab 2026 - {selected.code}</div>
+        <div style={{ display:"flex", gap:".6rem", flexWrap:"wrap", marginBottom:".6rem" }}>
+          <div style={{ flex:1, minWidth:180, padding:".6rem", background: nisabType==="gold" ? "rgba(212,160,23,.15)" : "rgba(212,160,23,.06)", borderRadius:7, borderLeft: nisabType==="gold" ? "3px solid #F5C842" : "2px solid #D4A017" }}>
+            <div style={{ fontSize:".7rem", color:"#F5C842", fontWeight:600 }}>Gold Nisab</div>
+            <div style={{ fontSize:".72rem", color:"#9A8F78", marginTop:".2rem" }}>7.5 Tolas (87.48g)</div>
+            <div style={{ fontSize:"1rem", color:"#F0E6C8", marginTop:".3rem", fontWeight:700 }}>{selected.symbol} {selected.goldNisab.toLocaleString()}</div>
+          </div>
+          <div style={{ flex:1, minWidth:180, padding:".6rem", background: nisabType==="silver" ? "rgba(212,160,23,.15)" : "rgba(212,160,23,.06)", borderRadius:7, borderLeft: nisabType==="silver" ? "3px solid #F5C842" : "2px solid #D4A017" }}>
+            <div style={{ fontSize:".7rem", color:"#F5C842", fontWeight:600 }}>Silver Nisab (Recommended)</div>
+            <div style={{ fontSize:".72rem", color:"#9A8F78", marginTop:".2rem" }}>52.5 Tolas (612.36g)</div>
+            <div style={{ fontSize:"1rem", color:"#F0E6C8", marginTop:".3rem", fontWeight:700 }}>{selected.symbol} {selected.silverNisab.toLocaleString()}</div>
+          </div>
+        </div>
+        <div style={{ fontSize:".7rem", color:"#9A8F78", padding:".4rem .6rem", background:"rgba(255,255,255,.03)", borderRadius:5 }}>
+          Active Nisab: <strong style={{ color:"#F5C842" }}>{selected.symbol} {nisab.toLocaleString()}</strong> ({nisabType === "silver" ? "Silver 52.5 Tolas" : "Gold 7.5 Tolas"})
         </div>
       </div>
 
+      {/* Assets */}
       <div className="card" style={{ marginBottom:"1rem" }}>
         <div style={{ fontFamily:"Cinzel,serif", fontSize:".9rem", color:"#F5C842", marginBottom:".75rem" }}>Zakatable Assets ({selected.symbol})</div>
         {([
@@ -102,7 +101,7 @@ export default function ZakatClient() {
         ] as [string, (v:string)=>void, string][]).map(([val, fn, label]) => (
           <div key={label} style={{ marginBottom:".5rem" }}>
             <div style={{ fontSize:".62rem", color:"#9A8F78", marginBottom:".2rem" }}>{label}</div>
-            <input type="number" className="inp" placeholder={"0.00"} value={val} onChange={e => fn(e.target.value)} />
+            <input type="number" className="inp" placeholder="0.00" value={val} onChange={e => fn(e.target.value)} />
           </div>
         ))}
         <div style={{ display:"flex", justifyContent:"space-between", padding:".5rem .75rem", background:"rgba(212,160,23,.06)", borderRadius:5, marginTop:".5rem" }}>
@@ -111,6 +110,7 @@ export default function ZakatClient() {
         </div>
       </div>
 
+      {/* Liabilities */}
       <div className="card" style={{ marginBottom:"1rem" }}>
         <div style={{ fontFamily:"Cinzel,serif", fontSize:".9rem", color:"#F5C842", marginBottom:".75rem" }}>Deductible Liabilities ({selected.symbol})</div>
         {([
@@ -120,7 +120,7 @@ export default function ZakatClient() {
         ] as [string, (v:string)=>void, string][]).map(([val, fn, label]) => (
           <div key={label} style={{ marginBottom:".5rem" }}>
             <div style={{ fontSize:".62rem", color:"#9A8F78", marginBottom:".2rem" }}>{label}</div>
-            <input type="number" className="inp" placeholder={"0.00"} value={val} onChange={e => fn(e.target.value)} />
+            <input type="number" className="inp" placeholder="0.00" value={val} onChange={e => fn(e.target.value)} />
           </div>
         ))}
         <div style={{ display:"flex", justifyContent:"space-between", padding:".5rem .75rem", background:"rgba(239,68,68,.06)", borderRadius:5, marginTop:".5rem" }}>
@@ -129,16 +129,17 @@ export default function ZakatClient() {
         </div>
       </div>
 
+      {/* Result */}
       {totalAssets > 0 && (
         <div className="card">
           <div style={{ fontFamily:"Cinzel,serif", fontSize:".9rem", color:"#F5C842", marginBottom:".75rem" }}>Zakat Result 2026</div>
           <div style={{ display:"flex", flexWrap:"wrap", gap:".6rem", marginBottom:".75rem" }}>
             <div className="stat-box">
-              <div style={{ fontSize:".95rem", fontWeight:600, color:"#F5C842" }}>{selected.symbol} {fmt(netWealth)}</div>
+              <div style={{ fontSize:".9rem", fontWeight:600, color:"#F5C842" }}>{selected.symbol} {fmt(netWealth)}</div>
               <div style={{ fontSize:".65rem", color:"#9A8F78", marginTop:2 }}>Net Wealth</div>
             </div>
             <div className="stat-box">
-              <div style={{ fontSize:".95rem", fontWeight:600, color:"#F5C842" }}>{selected.symbol} {nisab.toLocaleString()}</div>
+              <div style={{ fontSize:".9rem", fontWeight:600, color:"#F5C842" }}>{selected.symbol} {nisab.toLocaleString()}</div>
               <div style={{ fontSize:".65rem", color:"#9A8F78", marginTop:2 }}>Nisab 2026</div>
             </div>
             <div className="stat-box">
@@ -152,7 +153,7 @@ export default function ZakatClient() {
           </div>
           {zakatWajib ? (
             <div style={{ fontSize:".8rem", color:"#9A8F78", padding:".5rem .75rem", background:"rgba(74,222,128,.06)", borderRadius:7, borderLeft:"2px solid #4ade80" }}>
-              Net Wealth {selected.symbol} {fmt(netWealth)} Nisab se zyada hai. Zakat wajib: <strong style={{ color:"#F5C842" }}>{selected.symbol} {fmt(zakat)}</strong>
+              Net Wealth {selected.symbol} {fmt(netWealth)} Nisab se zyada. Zakat wajib: <strong style={{ color:"#F5C842" }}>{selected.symbol} {fmt(zakat)}</strong>
             </div>
           ) : (
             <div style={{ fontSize:".8rem", color:"#9A8F78", padding:".5rem .75rem", background:"rgba(239,68,68,.06)", borderRadius:7, borderLeft:"2px solid #ef4444" }}>
@@ -160,7 +161,7 @@ export default function ZakatClient() {
             </div>
           )}
           <div style={{ fontSize:".7rem", color:"#9A8F78", marginTop:".6rem", padding:".4rem .6rem", background:"rgba(255,255,255,.03)", borderRadius:5 }}>
-            Note: Nisab values approximate hain. Apne local aalim se confirm karein. Gold rate: 24K per Tola Rs. 477,762 (2026)
+            Note: Nisab values approximate hain. Apne local aalim se confirm karein.
           </div>
         </div>
       )}
