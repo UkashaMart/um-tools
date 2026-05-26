@@ -161,7 +161,7 @@ export default function ZakatClient() {
             </div>
           )}
           <div style={{ fontSize:".7rem", color:"#9A8F78", marginTop:".6rem", padding:".4rem .6rem", background:"rgba(255,255,255,.03)", borderRadius:5 }}>
-            Note: Nisab values approximate hain. Apne local aalim se confirm karein.
+            Note: Nisab values ​​are approximate. Please confirm with your local scholar..
           </div>
         </div>
       )}
