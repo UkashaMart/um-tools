@@ -12,8 +12,8 @@ export default function Contact() {
       {sent?(
         <div className="card" style={{ textAlign:"center", padding:"2rem" }}>
           <i className="ti ti-circle-check" style={{ fontSize:"2.5rem", color:"#22c55e", display:"block", marginBottom:".75rem" }} />
-          <div style={{ fontFamily:"Cinzel,serif", color:"#F5C842", marginBottom:".4rem" }}>Shukriya!</div>
-          <div style={{ fontSize:".85rem", color:"#9A8F78" }}>Aapka message mil gaya!</div>
+          <div style={{ fontFamily:"Cinzel,serif", color:"#F5C842", marginBottom:".4rem" }}>Thanks!</div>
+          <div style={{ fontSize:".85rem", color:"#9A8F78" }}>I received your message!</div>
         </div>
       ):(
         <div className="card">
