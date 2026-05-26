@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7032253044947209" crossOrigin="anonymous" strategy="afterInteractive" />
         <header style={{ background:"#111827", borderBottom:"1px solid rgba(212,160,23,0.4)", padding:"0 1.25rem", display:"flex", alignItems:"center", gap:"0.75rem", height:"52px", position:"sticky", top:0, zIndex:100 }}>
           <Link href="/" style={{ display:"flex", alignItems:"center", gap:"0.75rem", textDecoration:"none" }}>
-            <img src="/logo.png" alt="UM Tools" width={36} height={36} style={{ borderRadius:"50%", objectFit:"cover" }} />
+            <img src="/logo.webp" alt="UM Tools" width={36} height={36} style={{ borderRadius:"50%", objectFit:"cover" }} />
             <div>
               <div className="gold-text" style={{ fontFamily:"Cinzel, serif", fontSize:"1rem", fontWeight:600 }}>UM Tools</div>
               <div style={{ fontSize:"0.6rem", color:"#9A8F78", letterSpacing:"2px", textTransform:"uppercase" }}>Digital Suite</div>
