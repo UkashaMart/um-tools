@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "UM Tools — Free Online Utility Tools | Word Counter, Zakat, BMI & More",
+  title: "UM Tools — Free Online Utility Tools |title: "UM Tools � Free Online Utility Tools Pakistan",
   description: "25+ free online tools for text, calculators, dev tools and more. No signup required.",
 };
 
