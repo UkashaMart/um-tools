@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           function googleTranslateElementInit() {
             new google.translate.TranslateElement({
               pageLanguage: 'en',
-              includedLanguages: 'ur,ar,hi,bn,tr,fr,de,es,zh-CN,ru,fa,ms,id',
+              includedLanguages: 'en,ur,ar,hi,bn,tr,fr,de,es,zh-CN,ru,fa,ms,id',
               layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
               autoDisplay: false
             }, 'google_translate_element');
