@@ -1,48 +1,95 @@
 "use client";
 import { useState } from "react";
-function md5(str:string){
-  function safeAdd(x:number,y:number){const lsw=(x&0xFFFF)+(y&0xFFFF);const msw=(x>>16)+(y>>16)+(lsw>>16);return(msw<<16)|(lsw&0xFFFF);}
-  function bitRotateLeft(num:number,cnt:number){return(num<<cnt)|(num>>>(32-cnt));}
-  function md5cmn(q:number,a:number,b:number,x:number,s:number,t:number){return safeAdd(bitRotateLeft(safeAdd(safeAdd(a,q),safeAdd(x,t)),s),b);}
-  function md5ff(a:number,b:number,c:number,d:number,x:number,s:number,t:number){return md5cmn((b&c)|((~b)&d),a,b,x,s,t);}
-  function md5gg(a:number,b:number,c:number,d:number,x:number,s:number,t:number){return md5cmn((b&d)|(c&(~d)),a,b,x,s,t);}
-  function md5hh(a:number,b:number,c:number,d:number,x:number,s:number,t:number){return md5cmn(b^c^d,a,b,x,s,t);}
-  function md5ii(a:number,b:number,c:number,d:number,x:number,s:number,t:number){return md5cmn(c^(b|(~d)),a,b,x,s,t);}
-  function utf8Encode(s:string){return unescape(encodeURIComponent(s));}
-  function str2binl(str:string){const bin:number[]=[],mask=(1<<8)-1;for(let i=0;i<str.length*8;i+=8)bin[i>>5]|=(str.charCodeAt(i/8)&mask)<<(i%32);return bin;}
-  function binl2hex(binarray:number[]){const s="0123456789abcdef";let str="";for(let i=0;i<binarray.length*4;i++)str+=s.charAt((binarray[i>>2]>>((i%4)*8+4))&0xF)+s.charAt((binarray[i>>2]>>((i%4)*8))&0xF);return str;}
-  function binlMD5(x:number[],len:number){x[len>>5]|=0x80<<(len%32);x[(((len+64)>>>9)<<4)+14]=len;let a=1732584193,b=-271733879,c=-1732584194,d=271733878;
-  for(let i=0;i<x.length;i+=16){const [oa,ob,oc,od]=[a,b,c,d];
-  a=md5ff(a,b,c,d,x[i],7,-680876936);d=md5ff(d,a,b,c,x[i+1],12,-389564586);c=md5ff(c,d,a,b,x[i+2],17,606105819);b=md5ff(b,c,d,a,x[i+3],22,-1044525330);
-  a=md5ff(a,b,c,d,x[i+4],7,-176418897);d=md5ff(d,a,b,c,x[i+5],12,1200080426);c=md5ff(c,d,a,b,x[i+6],17,-1473231341);b=md5ff(b,c,d,a,x[i+7],22,-45705983);
-  a=md5ff(a,b,c,d,x[i+8],7,1770035416);d=md5ff(d,a,b,c,x[i+9],12,-1958414417);c=md5ff(c,d,a,b,x[i+10],17,-42063);b=md5ff(b,c,d,a,x[i+11],22,-1990404162);
-  a=md5ff(a,b,c,d,x[i+12],7,1804603682);d=md5ff(d,a,b,c,x[i+13],12,-40341101);c=md5ff(c,d,a,b,x[i+14],17,-1502002290);b=md5ff(b,c,d,a,x[i+15],22,1236535329);
-  a=md5gg(a,b,c,d,x[i+1],5,-165796510);d=md5gg(d,a,b,c,x[i+6],9,-1069501632);c=md5gg(c,d,a,b,x[i+11],14,643717713);b=md5gg(b,c,d,a,x[i],20,-373897302);
-  a=md5gg(a,b,c,d,x[i+5],5,-701558691);d=md5gg(d,a,b,c,x[i+10],9,38016083);c=md5gg(c,d,a,b,x[i+15],14,-660478335);b=md5gg(b,c,d,a,x[i+4],20,-405537848);
-  a=md5gg(a,b,c,d,x[i+9],5,568446438);d=md5gg(d,a,b,c,x[i+14],9,-1019803690);c=md5gg(c,d,a,b,x[i+3],14,-187363961);b=md5gg(b,c,d,a,x[i+8],20,1163531501);
-  a=md5gg(a,b,c,d,x[i+13],5,-1444681467);d=md5gg(d,a,b,c,x[i+2],9,-51403784);c=md5gg(c,d,a,b,x[i+7],14,1735328473);b=md5gg(b,c,d,a,x[i+12],20,-1926607734);
-  a=md5hh(a,b,c,d,x[i+5],4,-378558);d=md5hh(d,a,b,c,x[i+8],11,-2022574463);c=md5hh(c,d,a,b,x[i+11],16,1839030562);b=md5hh(b,c,d,a,x[i+14],23,-35309556);
-  a=md5hh(a,b,c,d,x[i+1],4,-1530992060);d=md5hh(d,a,b,c,x[i+4],11,1272893353);c=md5hh(c,d,a,b,x[i+7],16,-155497632);b=md5hh(b,c,d,a,x[i+10],23,-1094730640);
-  a=md5hh(a,b,c,d,x[i+13],4,681279174);d=md5hh(d,a,b,c,x[i],11,-358537222);c=md5hh(c,d,a,b,x[i+3],16,-722521979);b=md5hh(b,c,d,a,x[i+6],23,76029189);
-  a=md5hh(a,b,c,d,x[i+9],4,-640364487);d=md5hh(d,a,b,c,x[i+12],11,-421815835);c=md5hh(c,d,a,b,x[i+15],16,530742520);b=md5hh(b,c,d,a,x[i+2],23,-995338651);
-  a=md5ii(a,b,c,d,x[i],6,-198630844);d=md5ii(d,a,b,c,x[i+7],10,1126891415);c=md5ii(c,d,a,b,x[i+14],15,-1416354905);b=md5ii(b,c,d,a,x[i+5],21,-57434055);
-  a=md5ii(a,b,c,d,x[i+12],6,1700485571);d=md5ii(d,a,b,c,x[i+3],10,-1894986606);c=md5ii(c,d,a,b,x[i+10],15,-1051523);b=md5ii(b,c,d,a,x[i+1],21,-2054922799);
-  a=md5ii(a,b,c,d,x[i+8],6,1873313359);d=md5ii(d,a,b,c,x[i+15],10,-30611744);c=md5ii(c,d,a,b,x[i+6],15,-1560198380);b=md5ii(b,c,d,a,x[i+13],21,1309151649);
-  a=md5ii(a,b,c,d,x[i+4],6,-145523070);d=md5ii(d,a,b,c,x[i+11],10,-1120210379);c=md5ii(c,d,a,b,x[i+2],15,718787259);b=md5ii(b,c,d,a,x[i+9],21,-343485551);
-  a=safeAdd(a,oa);b=safeAdd(b,ob);c=safeAdd(c,oc);d=safeAdd(d,od);}return[a,b,c,d];}
-  const encoded=utf8Encode(str);return binl2hex(binlMD5(str2binl(encoded),encoded.length*8));
+
+function md5(input: string): string {
+  function safeAdd(x: number, y: number) { const lsw = (x & 0xffff) + (y & 0xffff); return ((x >> 16) + (y >> 16) + (lsw >> 16)) << 16 | lsw & 0xffff; }
+  function rol(n: number, c: number) { return n << c | n >>> 32 - c; }
+  function cmn(q: number, a: number, b: number, x: number, s: number, t: number) { return safeAdd(rol(safeAdd(safeAdd(a, q), safeAdd(x, t)), s), b); }
+  function ff(a: number, b: number, c: number, d: number, x: number, s: number, t: number) { return cmn(b & c | ~b & d, a, b, x, s, t); }
+  function gg(a: number, b: number, c: number, d: number, x: number, s: number, t: number) { return cmn(b & d | c & ~d, a, b, x, s, t); }
+  function hh(a: number, b: number, c: number, d: number, x: number, s: number, t: number) { return cmn(b ^ c ^ d, a, b, x, s, t); }
+  function ii(a: number, b: number, c: number, d: number, x: number, s: number, t: number) { return cmn(c ^ (b | ~d), a, b, x, s, t); }
+  const str = unescape(encodeURIComponent(input));
+  const bin: number[] = [];
+  for (let i = 0; i < str.length * 8; i += 8) bin[i >> 5] |= (str.charCodeAt(i / 8) & 0xff) << i % 32;
+  bin[(str.length >> 2) + 1 & ~1 | (str.length & 3 ? 0 : 0)] = 0;
+  bin[str.length >> 2] |= 0x80 << str.length % 4 * 8;
+  bin[((str.length + 8 >> 6) + 1) * 16 - 2] = str.length * 8;
+  let a = 1732584193, b = -271733879, c = -1732584194, d = 271733878;
+  for (let i = 0; i < bin.length; i += 16) {
+    const [oa, ob, oc, od] = [a, b, c, d];
+    a=ff(a,b,c,d,bin[i],7,-680876936);d=ff(d,a,b,c,bin[i+1],12,-389564586);c=ff(c,d,a,b,bin[i+2],17,606105819);b=ff(b,c,d,a,bin[i+3],22,-1044525330);
+    a=ff(a,b,c,d,bin[i+4],7,-176418897);d=ff(d,a,b,c,bin[i+5],12,1200080426);c=ff(c,d,a,b,bin[i+6],17,-1473231341);b=ff(b,c,d,a,bin[i+7],22,-45705983);
+    a=ff(a,b,c,d,bin[i+8],7,1770035416);d=ff(d,a,b,c,bin[i+9],12,-1958414417);c=ff(c,d,a,b,bin[i+10],17,-42063);b=ff(b,c,d,a,bin[i+11],22,-1990404162);
+    a=ff(a,b,c,d,bin[i+12],7,1804603682);d=ff(d,a,b,c,bin[i+13],12,-40341101);c=ff(c,d,a,b,bin[i+14],17,-1502002290);b=ff(b,c,d,a,bin[i+15],22,1236535329);
+    a=gg(a,b,c,d,bin[i+1],5,-165796510);d=gg(d,a,b,c,bin[i+6],9,-1069501632);c=gg(c,d,a,b,bin[i+11],14,643717713);b=gg(b,c,d,a,bin[i],20,-373897302);
+    a=gg(a,b,c,d,bin[i+5],5,-701558691);d=gg(d,a,b,c,bin[i+10],9,38016083);c=gg(c,d,a,b,bin[i+15],14,-660478335);b=gg(b,c,d,a,bin[i+4],20,-405537848);
+    a=gg(a,b,c,d,bin[i+9],5,568446438);d=gg(d,a,b,c,bin[i+14],9,-1019803690);c=gg(c,d,a,b,bin[i+3],14,-187363961);b=gg(b,c,d,a,bin[i+8],20,1163531501);
+    a=gg(a,b,c,d,bin[i+13],5,-1444681467);d=gg(d,a,b,c,bin[i+2],9,-51403784);c=gg(c,d,a,b,bin[i+7],14,1735328473);b=gg(b,c,d,a,bin[i+12],20,-1926607734);
+    a=hh(a,b,c,d,bin[i+5],4,-378558);d=hh(d,a,b,c,bin[i+8],11,-2022574463);c=hh(c,d,a,b,bin[i+11],16,1839030562);b=hh(b,c,d,a,bin[i+14],23,-35309556);
+    a=hh(a,b,c,d,bin[i+1],4,-1530992060);d=hh(d,a,b,c,bin[i+4],11,1272893353);c=hh(c,d,a,b,bin[i+7],16,-155497632);b=hh(b,c,d,a,bin[i+10],23,-1094730640);
+    a=hh(a,b,c,d,bin[i+13],4,681279174);d=hh(d,a,b,c,bin[i],11,-358537222);c=hh(c,d,a,b,bin[i+3],16,-722521979);b=hh(b,c,d,a,bin[i+6],23,76029189);
+    a=hh(a,b,c,d,bin[i+9],4,-640364487);d=hh(d,a,b,c,bin[i+12],11,-421815835);c=hh(c,d,a,b,bin[i+15],16,530742520);b=hh(b,c,d,a,bin[i+2],23,-995338651);
+    a=ii(a,b,c,d,bin[i],6,-198630844);d=ii(d,a,b,c,bin[i+7],10,1126891415);c=ii(c,d,a,b,bin[i+14],15,-1416354905);b=ii(b,c,d,a,bin[i+5],21,-57434055);
+    a=ii(a,b,c,d,bin[i+12],6,1700485571);d=ii(d,a,b,c,bin[i+3],10,-1894986606);c=ii(c,d,a,b,bin[i+10],15,-1051523);b=ii(b,c,d,a,bin[i+1],21,-2054922799);
+    a=ii(a,b,c,d,bin[i+8],6,1873313359);d=ii(d,a,b,c,bin[i+15],10,-30611744);c=ii(c,d,a,b,bin[i+6],15,-1560198380);b=ii(b,c,d,a,bin[i+13],21,1309151649);
+    a=ii(a,b,c,d,bin[i+4],6,-145523070);d=ii(d,a,b,c,bin[i+11],10,-1120210379);c=ii(c,d,a,b,bin[i+2],15,718787259);b=ii(b,c,d,a,bin[i+9],21,-343485551);
+    a=safeAdd(a,oa);b=safeAdd(b,ob);c=safeAdd(c,oc);d=safeAdd(d,od);
+  }
+  const hex = "0123456789abcdef";
+  let out = "";
+  for (let i = 0; i < 4; i++) { const n = [a,b,c,d][i]; for (let j = 0; j < 4; j++) { out += hex[(n >> j*8+4) & 0xf] + hex[(n >> j*8) & 0xf]; } }
+  return out;
 }
+
 export default function MD5Client() {
-  const [input,setInput]=useState(""); const hash=input?md5(input):"";
+  const [input, setInput] = useState("");
+  const hash = input ? md5(input) : "";
   return (
     <div>
       <h1 style={{ fontFamily:"Cinzel,serif", fontSize:"1.3rem", color:"#F5C842", marginBottom:".2rem" }}>MD5 Hash Generator</h1>
-      <p style={{ fontSize:".78rem", color:"#9A8F78", marginBottom:"1rem" }}>Real-time MD5 hash generate karo</p>
-      <div className="card">
-        <textarea className="inp" rows={4} placeholder="Text yahan likho..." value={input} onChange={e=>setInput(e.target.value)} style={{ resize:"vertical" }} />
-        <div style={{ fontSize:".62rem", color:"#D4A017", letterSpacing:"2px", textTransform:"uppercase", margin:".75rem 0 .4rem" }}>MD5 Hash</div>
+      <p style={{ fontSize:".78rem", color:"#9A8F78", marginBottom:"1rem" }}>Real-time MD5 hash generate karo - file verification aur checksums ke liye</p>
+      <div className="card" style={{ marginBottom:"1rem" }}>
+        <textarea className="inp" rows={4} placeholder="Text yahan likho..." value={input} onChange={e=>setInput(e.target.value)} style={{ resize:"vertical", marginBottom:".75rem" }} />
+        <div style={{ fontSize:".62rem", color:"#D4A017", letterSpacing:"2px", textTransform:"uppercase", marginBottom:".4rem" }}>MD5 Hash</div>
         <div className={`res-box${hash?" ok":""}`} style={{ fontFamily:"monospace", fontSize:".95rem", letterSpacing:1 }}>{hash||"Type karo to hash ayega..."}</div>
-        {hash && <button className="btn-outline" onClick={()=>navigator.clipboard.writeText(hash)} style={{ marginTop:".5rem" }}><i className="ti ti-copy" /> Copy Hash</button>}
+        {hash && <button className="btn-outline" onClick={()=>navigator.clipboard.writeText(hash)} style={{ marginTop:".5rem" }}>Copy Hash</button>}
+      </div>
+      <div className="card" style={{ marginBottom:"1rem" }}>
+        <h2 style={{ fontFamily:"Cinzel,serif", fontSize:"1rem", color:"#F5C842", marginBottom:".75rem" }}>MD5 Hash Kya Hota Hai?</h2>
+        <div style={{ fontSize:".82rem", color:"#9A8F78", lineHeight:1.9 }}>
+          <div style={{ marginBottom:".5rem" }}>MD5 kisi bhi input ko 32-character hexadecimal string mein convert karta hai. Same input hamesha same hash deta hai.</div>
+          <div style={{ padding:".4rem .75rem", background:"rgba(212,160,23,.06)", borderRadius:7, fontFamily:"monospace", fontSize:".78rem" }}>
+            <div style={{ color:"#9A8F78" }}>Input: "Hello"</div>
+            <div style={{ color:"#F5C842" }}>MD5: 8b1a9953c4611296a827abf8c47804d7</div>
+          </div>
+        </div>
+      </div>
+      <div className="card" style={{ marginBottom:"1rem" }}>
+        <h2 style={{ fontFamily:"Cinzel,serif", fontSize:"1rem", color:"#F5C842", marginBottom:".75rem" }}>MD5 Uses</h2>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(180px,1fr))", gap:".6rem" }}>
+          {[["File Integrity","Download ke baad verify karo"],["Checksums","Data corruption detect karo"],["Legacy Systems","Purane databases mein"],["Digital Signatures","File authenticity"]].map(([t,d])=>(
+            <div key={t} style={{ padding:".6rem", background:"rgba(212,160,23,.05)", borderRadius:7, borderLeft:"2px solid rgba(212,160,23,.3)" }}>
+              <div style={{ fontSize:".8rem", fontWeight:600, color:"#F0E6C8", marginBottom:".2rem" }}>{t}</div>
+              <div style={{ fontSize:".74rem", color:"#9A8F78" }}>{d}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="card" style={{ marginBottom:"1rem" }}>
+        <h2 style={{ fontFamily:"Cinzel,serif", fontSize:"1rem", color:"#F5C842", marginBottom:".5rem" }}>Warning</h2>
+        <div style={{ fontSize:".82rem", color:"#9A8F78", padding:".5rem .75rem", background:"rgba(239,68,68,.06)", borderRadius:7, borderLeft:"2px solid #ef4444" }}>
+          MD5 passwords store karne ke liye use mat karein - cryptographically broken hai. Passwords ke liye bcrypt use karein.
+        </div>
+      </div>
+      <div className="card">
+        <h2 style={{ fontFamily:"Cinzel,serif", fontSize:"1rem", color:"#F5C842", marginBottom:".75rem" }}>Aksar Pooche Jane Wale Sawal</h2>
+        {[["MD5 secure hai?","Nahi! MD5 cryptographically broken hai. Sirf checksums ke liye use karein, passwords ke liye nahi."],["Same text same hash deta hai?","Haan! MD5 deterministic hai - same input hamesha same output deta hai."],["MD5 reverse kar sakte hain?","Nahi, MD5 one-way function hai. Hash se original text nahi nikali ja sakti."]].map(([q,a])=>(
+          <div key={q} style={{ marginBottom:".6rem", paddingBottom:".6rem", borderBottom:"1px solid rgba(212,160,23,.1)" }}>
+            <div style={{ fontSize:".82rem", fontWeight:600, color:"#F0E6C8", marginBottom:".2rem" }}>Q: {q}</div>
+            <div style={{ fontSize:".78rem", color:"#9A8F78" }}>A: {a}</div>
+          </div>
+        ))}
       </div>
     </div>
   );
