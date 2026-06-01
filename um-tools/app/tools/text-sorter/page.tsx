@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import SortClient from "./SortClient";
+
 export const metadata: Metadata = {
-  title: "Text Sorter Online Free - Sort Lines A-Z Z-A Alphabetically",
-  description: "Text sorter online free. Lines ko A-Z, Z-A, length ke hisaab se sort karo ya randomly shuffle karo. Lists organize karne ka easy tool.",
-  keywords: "text sorter online, sort lines alphabetically, line sorter free, text organizer online, alphabetical sorter",
+  title: "Text Sorter Online Free - Sort Lines Alphabetically",
+  description: "Free online text sorter. Easily organize your lists by sorting lines alphabetically (A-Z, Z-A), by length, or shuffling them randomly. A fast, simple tool for text management.",
+  keywords: "text sorter online, sort lines alphabetically, line sorter free, text organizer online, alphabetical sorter, shuffle text lines",
 };
-export default function Page() { return <SortClient />; }
+
+export default function Page() { 
+  return <SortClient />; 
+}

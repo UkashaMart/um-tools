@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import BMIClient from "./BMIClient";
+
 export const metadata: Metadata = {
-  title: "BMI Calculator Pakistan - Body Mass Index Free Online",
-  description: "BMI calculator Pakistan. Apna Body Mass Index calculate karo. Underweight, normal, overweight ya obese category janiye. Pakistani adults ke liye.",
-  keywords: "bmi calculator pakistan, body mass index calculator, bmi calculator online free, bmi calculator urdu",
+  title: "BMI Calculator Pakistan - Free Online Body Mass Index Tool",
+  description: "Free online BMI calculator optimized for users in Pakistan and worldwide. Calculate your Body Mass Index instantly and determine if you are underweight, normal weight, overweight, or obese.",
+  keywords: "bmi calculator pakistan, body mass index calculator, bmi calculator online free, accurate bmi tracker, ideal weight calculator",
 };
-export default function Page() { return <BMIClient />; }
+
+export default function Page() { 
+  return <BMIClient />; 
+}

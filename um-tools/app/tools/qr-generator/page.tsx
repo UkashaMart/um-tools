@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import QRClient from "./QRClient";
+
 export const metadata: Metadata = {
-  title: "QR Code Generator Free Online - PNG Download",
-  description: "Free QR code generator online. Kisi bhi URL, text, WhatsApp link ya payment link ka QR code banao. PNG mein download karo. No signup required.",
-  keywords: "qr code generator free, qr code generator online, qr code banao, whatsapp qr code generator, qr code png download",
+  title: "QR Code Generator Online Free - High Quality PNG",
+  description: "Free online QR code generator. Instantly create custom QR codes for URLs, text, WhatsApp links, and payments. Download as high-quality PNG. No registration required.",
+  keywords: "qr code generator free, qr code generator online, create custom qr code, whatsapp qr code generator, qr code png download, free qr creator",
 };
-export default function Page() { return <QRClient />; }
+
+export default function Page() { 
+  return <QRClient />; 
+}

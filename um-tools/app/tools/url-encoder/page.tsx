@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import URLClient from "./URLClient";
+
 export const metadata: Metadata = {
-  title: "URL Encoder Decoder Online Free - Special Characters",
-  description: "URL encoder decoder online free. Special characters encode ya decode karo. Web developers ke liye essential tool. Urdu text URL encoding bhi.",
-  keywords: "url encoder online, url decoder online, url encode decode free, urdu url encoder, special characters url encode",
+  title: "URL Encoder & Decoder Online Free - Web Tools",
+  description: "Free online URL encoder and decoder. Quickly encode or decode special characters in URLs for web development. Supports UTF-8 and international character sets.",
+  keywords: "url encoder online, url decoder online, url encode decode free, url character encoding, web developer tool, encode special characters",
 };
-export default function Page() { return <URLClient />; }
+
+export default function Page() { 
+  return <URLClient />; 
+}

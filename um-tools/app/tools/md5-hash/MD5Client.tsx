@@ -47,47 +47,56 @@ export default function MD5Client() {
   const hash = input ? md5(input) : "";
   return (
     <div>
-      <h1 style={{ fontFamily:"Cinzel,serif", fontSize:"1.3rem", color:"#F5C842", marginBottom:".2rem" }}>MD5 Hash Generator</h1>
-      <p style={{ fontSize:".78rem", color:"#9A8F78", marginBottom:"1rem" }}>Real-time MD5 hash generate karo - file verification aur checksums ke liye</p>
-      <div className="card" style={{ marginBottom:"1rem" }}>
-        <textarea className="inp" rows={4} placeholder="Text yahan likho..." value={input} onChange={e=>setInput(e.target.value)} style={{ resize:"vertical", marginBottom:".75rem" }} />
-        <div style={{ fontSize:".62rem", color:"#D4A017", letterSpacing:"2px", textTransform:"uppercase", marginBottom:".4rem" }}>MD5 Hash</div>
-        <div className={`res-box${hash?" ok":""}`} style={{ fontFamily:"monospace", fontSize:".95rem", letterSpacing:1 }}>{hash||"Type karo to hash ayega..."}</div>
-        {hash && <button className="btn-outline" onClick={()=>navigator.clipboard.writeText(hash)} style={{ marginTop:".5rem" }}>Copy Hash</button>}
+      <h1 style={{ fontFamily: "Cinzel,serif", fontSize: "1.3rem", color: "#F5C842", marginBottom: ".2rem" }}>MD5 Hash Generator</h1>
+      <p style={{ fontSize: ".78rem", color: "#9A8F78", marginBottom: "1rem" }}>Instantly generate MD5 hashes for text, ideal for file checksum verification and data integrity checks.</p>
+      
+      <div className="card" style={{ marginBottom: "1rem" }}>
+        <textarea className="inp" rows={4} placeholder="Type your text here..." value={input} onChange={e => setInput(e.target.value)} style={{ resize: "vertical", marginBottom: ".75rem" }} />
+        <div style={{ fontSize: ".62rem", color: "#D4A017", letterSpacing: "2px", textTransform: "uppercase", marginBottom: ".4rem" }}>MD5 Hash Result</div>
+        <div className={`res-box${hash ? " ok" : ""}`} style={{ fontFamily: "monospace", fontSize: ".95rem", letterSpacing: 1 }}>{hash || "Your hash will appear here..."}</div>
+        {hash && <button className="btn-outline" onClick={() => navigator.clipboard.writeText(hash)} style={{ marginTop: ".5rem" }}>Copy Hash</button>}
       </div>
-      <div className="card" style={{ marginBottom:"1rem" }}>
-        <h2 style={{ fontFamily:"Cinzel,serif", fontSize:"1rem", color:"#F5C842", marginBottom:".75rem" }}>MD5 Hash Kya Hota Hai?</h2>
-        <div style={{ fontSize:".82rem", color:"#9A8F78", lineHeight:1.9 }}>
-          <div style={{ marginBottom:".5rem" }}>MD5 kisi bhi input ko 32-character hexadecimal string mein convert karta hai. Same input hamesha same hash deta hai.</div>
-          <div style={{ padding:".4rem .75rem", background:"rgba(212,160,23,.06)", borderRadius:7, fontFamily:"monospace", fontSize:".78rem" }}>
-            <div style={{ color:"#9A8F78" }}>Input: "Hello"</div>
-            <div style={{ color:"#F5C842" }}>MD5: 8b1a9953c4611296a827abf8c47804d7</div>
+
+      <div className="card" style={{ marginBottom: "1rem" }}>
+        <h2 style={{ fontFamily: "Cinzel,serif", fontSize: "1rem", color: "#F5C842", marginBottom: ".75rem" }}>What is an MD5 Hash?</h2>
+        <div style={{ fontSize: ".82rem", color: "#9A8F78", lineHeight: 1.9 }}>
+          <div style={{ marginBottom: ".5rem" }}>MD5 (Message Digest Algorithm 5) is a widely-used cryptographic hashing function that transforms any input into a unique 32-character hexadecimal string. Even minor changes in the input result in a completely different hash output.</div>
+          <div style={{ padding: ".4rem .75rem", background: "rgba(212,160,23,.06)", borderRadius: 7, fontFamily: "monospace", fontSize: ".78rem" }}>
+            <div style={{ color: "#9A8F78" }}>Input: "Hello"</div>
+            <div style={{ color: "#F5C842" }}>MD5: 8b1a9953c4611296a827abf8c47804d7</div>
           </div>
         </div>
       </div>
-      <div className="card" style={{ marginBottom:"1rem" }}>
-        <h2 style={{ fontFamily:"Cinzel,serif", fontSize:"1rem", color:"#F5C842", marginBottom:".75rem" }}>MD5 Uses</h2>
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(180px,1fr))", gap:".6rem" }}>
-          {[["File Integrity","Download ke baad verify karo"],["Checksums","Data corruption detect karo"],["Legacy Systems","Purane databases mein"],["Digital Signatures","File authenticity"]].map(([t,d])=>(
-            <div key={t} style={{ padding:".6rem", background:"rgba(212,160,23,.05)", borderRadius:7, borderLeft:"2px solid rgba(212,160,23,.3)" }}>
-              <div style={{ fontSize:".8rem", fontWeight:600, color:"#F0E6C8", marginBottom:".2rem" }}>{t}</div>
-              <div style={{ fontSize:".74rem", color:"#9A8F78" }}>{d}</div>
+
+      <div className="card" style={{ marginBottom: "1rem" }}>
+        <h2 style={{ fontFamily: "Cinzel,serif", fontSize: "1rem", color: "#F5C842", marginBottom: ".75rem" }}>Common MD5 Use Cases</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(180px,1fr))", gap: ".6rem" }}>
+          {[["File Integrity", "Verify files post-download to ensure they are corruption-free."], ["Data Checksums", "Quickly detect data errors in transmission or storage."], ["Legacy Systems", "Support for older system databases and application workflows."], ["Authenticity Checks", "Basic digital signature validation for static assets."]].map(([t, d]) => (
+            <div key={t} style={{ padding: ".6rem", background: "rgba(212,160,23,.05)", borderRadius: 7, borderLeft: "2px solid rgba(212,160,23,.3)" }}>
+              <div style={{ fontSize: ".8rem", fontWeight: 600, color: "#F0E6C8", marginBottom: ".2rem" }}>{t}</div>
+              <div style={{ fontSize: ".74rem", color: "#9A8F78" }}>{d}</div>
             </div>
           ))}
         </div>
       </div>
-      <div className="card" style={{ marginBottom:"1rem" }}>
-        <h2 style={{ fontFamily:"Cinzel,serif", fontSize:"1rem", color:"#F5C842", marginBottom:".5rem" }}>Warning</h2>
-        <div style={{ fontSize:".82rem", color:"#9A8F78", padding:".5rem .75rem", background:"rgba(239,68,68,.06)", borderRadius:7, borderLeft:"2px solid #ef4444" }}>
-          MD5 passwords store karne ke liye use mat karein - cryptographically broken hai. Passwords ke liye bcrypt use karein.
+
+      <div className="card" style={{ marginBottom: "1rem" }}>
+        <h2 style={{ fontFamily: "Cinzel,serif", fontSize: "1rem", color: "#F5C842", marginBottom: ".5rem" }}>Security Warning</h2>
+        <div style={{ fontSize: ".82rem", color: "#9A8F78", padding: ".5rem .75rem", background: "rgba(239,68,68,.06)", borderRadius: 7, borderLeft: "2px solid #ef4444" }}>
+          MD5 is cryptographically broken and is not suitable for secure password storage. For modern security requirements, always use stronger algorithms like bcrypt or Argon2.
         </div>
       </div>
+
       <div className="card">
-        <h2 style={{ fontFamily:"Cinzel,serif", fontSize:"1rem", color:"#F5C842", marginBottom:".75rem" }}>Aksar Pooche Jane Wale Sawal</h2>
-        {[["MD5 secure hai?","Nahi! MD5 cryptographically broken hai. Sirf checksums ke liye use karein, passwords ke liye nahi."],["Same text same hash deta hai?","Haan! MD5 deterministic hai - same input hamesha same output deta hai."],["MD5 reverse kar sakte hain?","Nahi, MD5 one-way function hai. Hash se original text nahi nikali ja sakti."]].map(([q,a])=>(
-          <div key={q} style={{ marginBottom:".6rem", paddingBottom:".6rem", borderBottom:"1px solid rgba(212,160,23,.1)" }}>
-            <div style={{ fontSize:".82rem", fontWeight:600, color:"#F0E6C8", marginBottom:".2rem" }}>Q: {q}</div>
-            <div style={{ fontSize:".78rem", color:"#9A8F78" }}>A: {a}</div>
+        <h2 style={{ fontFamily: "Cinzel,serif", fontSize: "1rem", color: "#F5C842", marginBottom: ".75rem" }}>Frequently Asked Questions</h2>
+        {[
+          ["Is MD5 considered secure?", "No. Because it is cryptographically broken, MD5 should be reserved for checksums only and never used for password encryption."],
+          ["Does the same input always result in the same hash?", "Yes. MD5 is deterministic, meaning the exact same input string will always yield the exact same 32-character hexadecimal hash output."],
+          ["Can I reverse an MD5 hash back to the original text?", "No. MD5 is a one-way hash function. It is mathematically impossible to reconstruct the original input from the resulting hash string."]
+        ].map(([q, a]) => (
+          <div key={q} style={{ marginBottom: ".6rem", paddingBottom: ".6rem", borderBottom: "1px solid rgba(212,160,23,.1)" }}>
+            <div style={{ fontSize: ".82rem", fontWeight: 600, color: "#F0E6C8", marginBottom: ".2rem" }}>Q: {q}</div>
+            <div style={{ fontSize: ".78rem", color: "#9A8F78" }}>A: {a}</div>
           </div>
         ))}
       </div>
