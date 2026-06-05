@@ -25,6 +25,8 @@ const nav = [
   { label: "Color Picker", href: "/tools/color-picker", icon: "ti-palette", section: null },
   { label: "Image→Base64", href: "/tools/image-to-base64", icon: "ti-photo", section: null },
   { label: "Aspect Ratio", href: "/tools/aspect-ratio", icon: "ti-aspect-ratio", section: null },
+  { label: "Currency Converter", href: "/tools/currency-converter", icon: "ti-currency-dollar", section: "Finance" },
+  { label: "Unit Converter", href: "/tools/unit-converter", icon: "ti-ruler", section: null },
   { label: "All Posts", href: "/blog", icon: "ti-news", section: "Blog" },
   { label: "About Us", href: "/about", icon: "ti-info-circle", section: "Info" },
   { label: "Contact", href: "/contact", icon: "ti-mail", section: null },
