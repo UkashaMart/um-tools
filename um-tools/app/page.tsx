@@ -28,6 +28,8 @@ const tools = [
   { name: "Color Picker", href: "/tools/color-picker", icon: "ti-palette", cat: "Design" },
   { name: "Image→Base64", href: "/tools/image-to-base64", icon: "ti-photo", cat: "Image" },
   { name: "Aspect Ratio", href: "/tools/aspect-ratio", icon: "ti-aspect-ratio", cat: "Design" },
+  { name: "Currency Converter", href: "/tools/currency-converter", icon: "ti-currency-dollar", cat: "Finance" },
+  { name: "Unit Converter", href: "/tools/unit-converter", icon: "ti-ruler", cat: "Converter" },
 ];
 
 export default function Home() {
