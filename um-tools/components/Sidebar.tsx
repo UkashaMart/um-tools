@@ -31,6 +31,9 @@ const nav = [
   { label: "About Us", href: "/about", icon: "ti-info-circle", section: "Info" },
   { label: "Contact", href: "/contact", icon: "ti-mail", section: null },
   { label: "Privacy Policy", href: "/privacy-policy", icon: "ti-shield", section: null },
+  { label: "Random Number", href: "/tools/random-number-generator", icon: "ti-dice", section: null },
+{ label: "Tip Calculator", href: "/tools/tip-calculator", icon: "ti-receipt", section: null },
+{ label: "Grade Calculator", href: "/tools/grade-calculator", icon: "ti-school", section: null },
 ];
 
 export default function Sidebar() {
