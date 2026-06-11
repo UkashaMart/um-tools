@@ -27,13 +27,14 @@ const nav = [
   { label: "Aspect Ratio", href: "/tools/aspect-ratio", icon: "ti-aspect-ratio", section: null },
   { label: "Currency Converter", href: "/tools/currency-converter", icon: "ti-currency-dollar", section: "Finance" },
   { label: "Unit Converter", href: "/tools/unit-converter", icon: "ti-ruler", section: null },
+  { label: "Random Number", href: "/tools/random-number-generator", icon: "ti-dice", section: null },
+{ label: "Tip Calculator", href: "/tools/tip-calculator", icon: "ti-receipt", section: null },
+{ label: "Grade Calculator", href: "/tools/grade-calculator", icon: "ti-school", section: null },
   { label: "All Posts", href: "/blog", icon: "ti-news", section: "Blog" },
   { label: "About Us", href: "/about", icon: "ti-info-circle", section: "Info" },
   { label: "Contact", href: "/contact", icon: "ti-mail", section: null },
   { label: "Privacy Policy", href: "/privacy-policy", icon: "ti-shield", section: null },
-  { label: "Random Number", href: "/tools/random-number-generator", icon: "ti-dice", section: null },
-{ label: "Tip Calculator", href: "/tools/tip-calculator", icon: "ti-receipt", section: null },
-{ label: "Grade Calculator", href: "/tools/grade-calculator", icon: "ti-school", section: null },
+  
 ];
 
 export default function Sidebar() {
