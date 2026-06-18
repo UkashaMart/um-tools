@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 const tools = [
   { name: "Word Counter", href: "/tools/word-counter", icon: "ti-letter-case", cat: "Text" },
+  { name: "Invoice Generator", href: "/tools/invoice-generator", icon: "ti-file-invoice", cat: "Business" },
   { name: "Case Converter", href: "/tools/case-converter", icon: "ti-transform", cat: "Text" },
   { name: "Lorem Ipsum", href: "/tools/lorem-ipsum", icon: "ti-file-text", cat: "Text" },
   { name: "Duplicate Remover", href: "/tools/duplicate-remover", icon: "ti-list-check", cat: "Text" },
