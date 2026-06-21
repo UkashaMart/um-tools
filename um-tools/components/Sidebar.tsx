@@ -10,6 +10,7 @@ const nav = [
   { label: "Case Converter", href: "/tools/case-converter", icon: "ti-transform", section: null },
   { label: "Lorem Ipsum", href: "/tools/lorem-ipsum", icon: "ti-file-text", section: null },
   { label: "Hashtag Generator", href: "/tools/free-hashtag-generator", icon: "ti-hash", section: "Social Media" },
+  { label: "Resume Builder", href: "/tools/free-resume-builder", icon: "ti-file-cv", section: "Career" },
   { label: "Duplicate Remover", href: "/tools/duplicate-remover", icon: "ti-list-check", section: null },
   { label: "Text Sorter", href: "/tools/text-sorter", icon: "ti-arrows-sort", section: null },
   { label: "Zakat Calc", href: "/tools/zakat-calculator", icon: "ti-coin", section: "Calculators" },
