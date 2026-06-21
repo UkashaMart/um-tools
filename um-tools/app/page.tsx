@@ -12,6 +12,7 @@ const tools = [
   { name: "YT Thumbnail", href: "/tools/free-youtube-thumbnail-downloader", icon: "ti-brand-youtube", cat: "Media" },
   { name: "Case Converter", href: "/tools/case-converter", icon: "ti-transform", cat: "Text" },
   { name: "Lorem Ipsum", href: "/tools/lorem-ipsum", icon: "ti-file-text", cat: "Text" },
+  { name: "Hashtag Generator", href: "/tools/free-hashtag-generator", icon: "ti-hash", cat: "Social Media" },
   { name: "Duplicate Remover", href: "/tools/duplicate-remover", icon: "ti-list-check", cat: "Text" },
   { name: "Text Sorter", href: "/tools/text-sorter", icon: "ti-arrows-sort", cat: "Text" },
   { name: "Zakat Calculator", href: "/tools/zakat-calculator", icon: "ti-coin", cat: "Pakistan" },
