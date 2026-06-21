@@ -13,6 +13,7 @@ const tools = [
   { name: "Case Converter", href: "/tools/case-converter", icon: "ti-transform", cat: "Text" },
   { name: "Lorem Ipsum", href: "/tools/lorem-ipsum", icon: "ti-file-text", cat: "Text" },
   { name: "Hashtag Generator", href: "/tools/free-hashtag-generator", icon: "ti-hash", cat: "Social Media" },
+  { name: "Text to Speech", href: "/tools/free-text-to-speech", icon: "ti-volume", cat: "Tools" },
   { name: "Duplicate Remover", href: "/tools/duplicate-remover", icon: "ti-list-check", cat: "Text" },
   { name: "Resume Builder", href: "/tools/free-resume-builder", icon: "ti-file-cv", cat: "Career" },
   { name: "Text Sorter", href: "/tools/text-sorter", icon: "ti-arrows-sort", cat: "Text" },
