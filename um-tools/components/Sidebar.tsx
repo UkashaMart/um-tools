@@ -6,6 +6,7 @@ const nav = [
   { label: "Home", href: "/", icon: "ti-home", section: "Overview" },
   { label: "Word Counter", href: "/tools/word-counter", icon: "ti-letter-case", section: "Text Tools" },
   { label: "Invoice Generator", href: "/tools/invoice-generator", icon: "ti-file-invoice", section: "Business" },
+  { label: "YouTube Thumbnail", href: "/tools/free-youtube-thumbnail-downloader", icon: "ti-brand-youtube", section: "Media" },
   { label: "Case Converter", href: "/tools/case-converter", icon: "ti-transform", section: null },
   { label: "Lorem Ipsum", href: "/tools/lorem-ipsum", icon: "ti-file-text", section: null },
   { label: "Duplicate Remover", href: "/tools/duplicate-remover", icon: "ti-list-check", section: null },
