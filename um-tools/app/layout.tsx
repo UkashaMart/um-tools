@@ -5,7 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "UM Tools - Free Online Utility Tools",
+  title: "UM Tools - 25+ Free Online Tools, No Signup Required",
   description: "Free browser-based tools. Word Counter, Zakat Calculator, BMI, QR Generator and more.",
 };
 
