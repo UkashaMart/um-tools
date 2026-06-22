@@ -14,6 +14,7 @@ const nav = [
   { label: "Text to Speech", href: "/tools/free-text-to-speech", icon: "ti-volume", section: null },
   { label: "Duplicate Remover", href: "/tools/duplicate-remover", icon: "ti-list-check", section: null },
   { label: "Text Sorter", href: "/tools/text-sorter", icon: "ti-arrows-sort", section: null },
+  { label: "Due Date Calculator", href: "/tools/pregnancy-due-date-calculator", icon: "ti-baby-carriage", section: "Health" },
   { label: "Zakat Calc", href: "/tools/zakat-calculator", icon: "ti-coin", section: "Calculators" },
   { label: "BMI Calculator", href: "/tools/bmi-calculator", icon: "ti-heart-rate-monitor", section: null },
   { label: "Age Calculator", href: "/tools/age-calculator", icon: "ti-calendar", section: null },

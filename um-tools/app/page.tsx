@@ -19,6 +19,7 @@ const tools = [
   { name: "Text Sorter", href: "/tools/text-sorter", icon: "ti-arrows-sort", cat: "Text" },
   { name: "Zakat Calculator", href: "/tools/zakat-calculator", icon: "ti-coin", cat: "Pakistan" },
   { name: "BMI Calculator", href: "/tools/bmi-calculator", icon: "ti-heart-rate-monitor", cat: "Health" },
+  { name: "Due Date Calculator", href: "/tools/pregnancy-due-date-calculator", icon: "ti-baby-carriage", cat: "Health" },
   { name: "Age Calculator", href: "/tools/age-calculator", icon: "ti-calendar", cat: "Calculator" },
   { name: "Percentage Calc", href: "/tools/percentage-calculator", icon: "ti-percentage", cat: "Calculator" },
   { name: "Loan EMI", href: "/tools/loan-emi", icon: "ti-building-bank", cat: "Finance" },
