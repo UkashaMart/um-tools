@@ -72,7 +72,7 @@ export default function Home() {
 
       {/* Grid */}
       <h2 style={{ fontFamily: 'Cinzel, serif', fontSize: '1.1rem', color: '#F5C842', marginBottom: '0.25rem' }}>All Tools</h2>
-      <p style={{ fontSize: '0.78rem', color: '#9A8F78', marginBottom: '1rem' }}>Koi bhi tool click karo</p>
+      <p style={{ fontSize: '0.78rem', color: '#9A8F78', marginBottom: '1rem' }}>Click any tool</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(145px,1fr))', gap: '0.75rem' }}>
         {tools.map((t) => (
           <Link key={t.href} href={t.href} style={{ textDecoration: 'none' }}>
