@@ -17,6 +17,8 @@ const nav = [
   { label: "Due Date Calculator", href: "/tools/pregnancy-due-date-calculator", icon: "ti-baby-carriage", section: "Health" },
   { label: "Zakat Calc", href: "/tools/zakat-calculator", icon: "ti-coin", section: "Calculators" },
   { label: "BMI Calculator", href: "/tools/bmi-calculator", icon: "ti-heart-rate-monitor", section: null },
+  { label: "Speed Checker", href: "/tools/website-speed-checker", icon: "ti-gauge", section: "SEO Tools" },
+  { label: "Domain Age", href: "/tools/domain-age-checker", icon: "ti-calendar-time", section: null },
   { label: "Age Calculator", href: "/tools/age-calculator", icon: "ti-calendar", section: null },
   { label: "Percentage", href: "/tools/percentage-calculator", icon: "ti-percentage", section: null },
   { label: "Loan EMI", href: "/tools/loan-emi", icon: "ti-building-bank", section: null },
