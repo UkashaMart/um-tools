@@ -60,6 +60,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" style={{ fontSize:".78rem", color:"#9A8F78", textDecoration:"none" }}>Home</Link>
             <Link href="/blog" style={{ fontSize:".78rem", color:"#9A8F78", textDecoration:"none" }}>Blog</Link>
             <Link href="/about" style={{ fontSize:".78rem", color:"#9A8F78", textDecoration:"none" }}>About</Link>
+            <Link href="https://store.ukashamart.com" target="_blank" style={{ fontSize:"0.8rem", color:"#9A8F78", textDecoration:"none" }}>Store</Link>
+            <Link href="https://agency.ukashamart.com" target="_blank" style={{ fontSize:"0.8rem", color:"#9A8F78", textDecoration:"none" }}>Agency</Link>
             <Link href="/contact" style={{ fontSize:".78rem", color:"#9A8F78", textDecoration:"none" }}>Contact</Link>
             <Link href="/privacy-policy" style={{ fontSize:".78rem", color:"#9A8F78", textDecoration:"none" }}>Privacy Policy</Link>
           </div>
