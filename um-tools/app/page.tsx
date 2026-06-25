@@ -17,6 +17,8 @@ const tools = [
   { name: "Duplicate Remover", href: "/tools/duplicate-remover", icon: "ti-list-check", cat: "Text" },
   { name: "Speed Checker", href: "/tools/website-speed-checker", icon: "ti-gauge", cat: "SEO" },
   { name: "Domain Age", href: "/tools/domain-age-checker", icon: "ti-calendar-time", cat: "SEO" },
+  { name: "Ovulation Calculator", href: "/tools/ovulation-calculator", icon: "ti-flower", cat: "Health" },
+  { name: "Calorie Calculator", href: "/tools/calorie-calculator", icon: "ti-apple", cat: "Health" },
   { name: "Resume Builder", href: "/tools/free-resume-builder", icon: "ti-file-cv", cat: "Career" },
   { name: "Text Sorter", href: "/tools/text-sorter", icon: "ti-arrows-sort", cat: "Text" },
   { name: "Zakat Calculator", href: "/tools/zakat-calculator", icon: "ti-coin", cat: "Pakistan" },
