@@ -65,6 +65,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/contact" style={{ fontSize:".78rem", color:"#9A8F78", textDecoration:"none" }}>Contact</Link>
             <Link href="/privacy-policy" style={{ fontSize:".78rem", color:"#9A8F78", textDecoration:"none" }}>Privacy Policy</Link>
           </div>
+          <div style={{ fontSize:".75rem", marginBottom:".6rem" }}>
+            <a href="mailto:info@ukashamart.com" style={{ color:"#D4A017", textDecoration:"none" }}>info@ukashamart.com</a>
+          </div>
           <div style={{ fontSize:".72rem", color:"#9A8F78" }}>2026 UM Tools - ukashamart.com</div>
         </footer>
 

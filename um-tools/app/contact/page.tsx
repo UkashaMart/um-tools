@@ -51,6 +51,9 @@ export default function Contact() {
   return (
     <div style={{ maxWidth: 620 }}>
       <h1 style={{ fontFamily: "Cinzel,serif", fontSize: "1.5rem", color: "#F5C842", marginBottom: ".3rem" }}>Contact Us</h1>
+      <div style={{ fontSize:".82rem", color:"#9A8F78", marginBottom:"1rem" }}>
+  Email us directly: <a href="mailto:info@ukashamart.com" style={{ color:"#F5C842" }}>info@ukashamart.com</a>
+      </div>
       <p style={{ fontSize: ".78rem", color: "#9A8F78", marginBottom: "1.5rem" }}>Any questions or suggestions? We would love to hear from you!</p>
 
       {status === "sent" ? (
