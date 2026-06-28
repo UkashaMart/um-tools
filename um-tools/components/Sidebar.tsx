@@ -23,6 +23,7 @@ const nav = [
   { label: "Ovulation Calculator", href: "/tools/ovulation-calculator", icon: "ti-flower", section: "Health" },
   { label: "Calorie Calculator", href: "/tools/calorie-calculator", icon: "ti-apple", section: null },
   { label: "Percentage", href: "/tools/percentage-calculator", icon: "ti-percentage", section: null },
+  { label: "Background Remover", href: "/tools/background-remover", icon: "ti-eraser", section: "Design" },
   { label: "Loan EMI", href: "/tools/loan-emi", icon: "ti-building-bank", section: null },
   { label: "CGPA Calc", href: "/tools/cgpa-calculator", icon: "ti-school", section: null },
   { label: "Salary Tax", href: "/tools/salary-tax", icon: "ti-receipt-tax", section: null },
