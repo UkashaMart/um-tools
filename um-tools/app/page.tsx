@@ -31,7 +31,6 @@ const tools = [
   { name: "Salary Tax", href: "/tools/salary-tax", icon: "ti-receipt-tax", cat: "Pakistan" },
   { name: "Password Generator", href: "/tools/password-generator", icon: "ti-lock", cat: "Dev" },
   { name: "Base64 Tool", href: "/tools/base64", icon: "ti-code", cat: "Dev" },
-  { name: "Background Remover", href: "/tools/background-remover", icon: "ti-eraser", cat: "Design" },
   { name: "JSON Formatter", href: "/tools/json-formatter", icon: "ti-braces", cat: "Dev" },
   { name: "MD5 Hash", href: "/tools/md5-hash", icon: "ti-hash", cat: "Dev" },
   { name: "URL Encoder", href: "/tools/url-encoder", icon: "ti-link", cat: "Dev" },
