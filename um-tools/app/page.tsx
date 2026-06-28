@@ -26,7 +26,6 @@ const tools = [
   { name: "Due Date Calculator", href: "/tools/pregnancy-due-date-calculator", icon: "ti-baby-carriage", cat: "Health" },
   { name: "Age Calculator", href: "/tools/age-calculator", icon: "ti-calendar", cat: "Calculator" },
   { name: "Percentage Calc", href: "/tools/percentage-calculator", icon: "ti-percentage", cat: "Calculator" },
-  { name: "Product Image Extractor", href: "/tools/product-image-extractor", icon: "ti-photo", cat: "Media" },
   { name: "Loan EMI", href: "/tools/loan-emi", icon: "ti-building-bank", cat: "Finance" },
   { name: "CGPA Calculator", href: "/tools/cgpa-calculator", icon: "ti-school", cat: "Pakistan" },
   { name: "Salary Tax", href: "/tools/salary-tax", icon: "ti-receipt-tax", cat: "Pakistan" },
