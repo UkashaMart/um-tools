@@ -29,8 +29,9 @@ export default function BgRemoverClient() {
       const blob: Blob = await imglyRemoveBackground(file);
       const url = URL.createObjectURL(blob);
       setResult(url);
-    } catch (err) {
-      setError("Could not process this image. Please try a different photo or refresh and try again.");
+    } catch (err: any) {
+  console.error("BG Remove Error:", err);
+  setError("Error: " + (err?.message || "Unknown error") + " - Check browser console for details.");
     } finally {
       setLoading(false);
       setProgress("");
