@@ -28,6 +28,7 @@ const nav = [
   { label: "Salary Tax", href: "/tools/salary-tax", icon: "ti-receipt-tax", section: null },
   { label: "Password Gen", href: "/tools/password-generator", icon: "ti-lock", section: "Dev Tools" },
   { label: "Base64", href: "/tools/base64", icon: "ti-code", section: null },
+  { label: "Background Remover", href: "/tools/background-remover", icon: "ti-eraser", section: "Design" },
   { label: "JSON Formatter", href: "/tools/json-formatter", icon: "ti-braces", section: null },
   { label: "MD5 Hash", href: "/tools/md5-hash", icon: "ti-hash", section: null },
   { label: "URL Encoder", href: "/tools/url-encoder", icon: "ti-link", section: null },
